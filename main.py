@@ -23,7 +23,8 @@ class YellowCircles(QMainWindow, UI.Ui_MainWindow):
         for i in range(count):
             x, y = randint(0, self.size().width()), randint(0, self.size().height())
             w = h = randint(5, 200)
-            qp.drawEllipse()
+            qp.drawEllipse(x, y, w, h)
 
     def btn_click(self):
-            self.paint = True
+        self.paint = True
+        self.repaint()

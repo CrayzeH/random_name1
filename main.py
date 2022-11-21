@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QColor
 from random import randint
 import UI
+import sys
 
 
 class YellowCircles(QMainWindow, UI.Ui_MainWindow):
@@ -28,3 +29,10 @@ class YellowCircles(QMainWindow, UI.Ui_MainWindow):
     def btn_click(self):
         self.paint = True
         self.repaint()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = YellowCircles()
+    ex.show()
+    sys.exit(app.exec_())

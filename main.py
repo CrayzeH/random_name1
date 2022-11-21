@@ -8,11 +8,12 @@ import sys
 class YellowCircles(QMainWindow, UI.Ui_MainWindow):
     def __init__(self):
         super().__init__()
+        self.paint = None
         self.setupUi(self)
         self.pushButton.clicked.connect(self.btn_click)
 
     def paintEvent(self, event):
-        if self.paint():
+        if self.paint:
             qp = QPainter()
             qp.begin(self)
             self.draw(qp)
